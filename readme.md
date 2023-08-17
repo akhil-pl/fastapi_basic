@@ -18,6 +18,7 @@ pip install mysql-connector-python
 pip install SQLAlchemy
 pip install "python-jose[cryptography]"
 pip install "passlib[bcrypt]"
+pip install python-multipart
 ```
 Or run the following code, it will recursively install all the requirements
 ``` bash
