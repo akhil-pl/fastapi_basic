@@ -15,8 +15,9 @@ source .env/bin/activate
 pip install fastapi
 pip install 'uvicorn[standard]'
 pip install mysql-connector-python
-pip install pandas
 pip install SQLAlchemy
+pip install "python-jose[cryptography]"
+pip install "passlib[bcrypt]"
 ```
 Or run the following code, it will recursively install all the requirements
 ``` bash
