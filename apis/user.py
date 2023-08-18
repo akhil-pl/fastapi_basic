@@ -9,11 +9,10 @@ from auth.functions import (hash_password,
                             Token
                             )
 from auth.authentication import ACCESS_TOKEN_EXPIRE_MINUTES
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordRequestForm
 from datetime import timedelta
 from typing import Annotated
 
-# oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 router = APIRouter()
@@ -34,13 +33,15 @@ def register_user(username:str, password:str, db: Session = Depends(get_db)):
 async def read_users_me(
     current_user: Annotated[User, Depends(get_current_active_user)]
 ):
+    '''Path to get current active user'''
     return current_user
 
 
-@router.post("/token", response_model=Token)
+@router.post("/token", response_model=Token, tags=["users"])
 async def login_for_access_token(
     form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)
 ):
+    '''Path to get Auth Token'''
     user = authenticate_user(username=form_data.username, password=form_data.password, db=db)
     
     if not user:
@@ -55,36 +56,3 @@ async def login_for_access_token(
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
-        
-    # Your token generation logic here
-    # Continue with token generation logic
-    # user_dict = fake_users_db.get(form_data.username)
-    # candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
-    # if not user_dict:
-    #     raise HTTPException(status_code=400, detail="Incorrect username or password")
-    # user = UserInDB(**user_dict)
-    # hashed_password = fake_hash_password(form_data.password)
-    # if not hashed_password == user.hashed_password:
-    #     raise HTTPException(status_code=400, detail="Incorrect username or password")
-
-    # return {"access_token": user.username, "token_type": "bearer"}
-
-
-
-
-
-
-# Path for Outh2autharisation
-# @router.post("/token")
-# def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
-#     user = authenticate_user(form_data.username, form_data.password)
-#     if not user:
-#         raise HTTPException(status_code=400, detail="Incorrect username or password")
-    
-#     # access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-#     access_token = create_access_token(
-#         data={"sub": user.username},
-#         # expires_delta=access_token_expires
-#     )
-    
-#     return {"access_token": access_token, "token_type": "bearer"}

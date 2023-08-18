@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Path
 from sqlalchemy.orm import Session, selectinload
 from data.database import get_db
-from data.model import Employee, Candidate, Department
+from data.model import Employee, Candidate, Department, User
+from auth.functions import get_current_active_user
 from datetime import datetime
 
 router = APIRouter()
@@ -18,6 +19,7 @@ async def create_employee(
     did: int = Query(..., description="Department ID"),
     start: str = Query(current_date, description="Start date"),
     end: str = Query("9999-12-31", description="End date"),
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     '''Add new employee'''
@@ -84,7 +86,7 @@ async def get_employee(employee_id: int, db: Session = Depends(get_db)):
 
 
 
-# Path to get all users
+# Path to get all employees
 @router.get("/employees/", tags=["employees"])
 async def get_all_employees(db: Session = Depends(get_db)):
     '''Get list of all employee'''
@@ -103,6 +105,7 @@ async def update_employee(
     did: int = Query(None, description="Department ID"),
     start: str = Query(None, description="Start date"),
     end: str = Query(None, description="End date"),
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     '''To update an existing employee'''
@@ -128,7 +131,11 @@ async def update_employee(
 
 # Path to delete a user
 @router.delete("/employees/{employee_id}", tags=["employees"])
-async def delete_employee(employee_id: int, db: Session = Depends(get_db)):
+async def delete_employee(
+        employee_id: int,
+        current_user: User = Depends(get_current_active_user),
+        db: Session = Depends(get_db)
+    ):
     '''To delete an existing employee'''
     employee = db.query(Employee).filter(Employee.id == employee_id).first()
     if not employee:

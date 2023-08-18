@@ -20,7 +20,7 @@ This API is to interact with employee_database, having following tables
 tags_metadata = [
     {
         "name": "users",
-        "description": "Operations with users. The **login** logic and Token based authentications are also here. **_Not implemented_**.",
+        "description": "Operations with users. The **_login_** logic and **_Token based authentications_** are also here.",
         "externalDocs": {
             "description": "Items external docs",
             "url": "https://fastapi.tiangolo.com/",

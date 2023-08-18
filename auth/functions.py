@@ -1,7 +1,6 @@
 from passlib.context import CryptContext
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-from typing import Optional
 from .authentication import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 from sqlalchemy.orm import Session
 from data.model import User
@@ -9,8 +8,9 @@ from data.database import get_db
 
 from typing import Annotated
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer
 from pydantic import BaseModel
+
 
 class Token(BaseModel):
     access_token: str
@@ -20,13 +20,17 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     username: str | None = None
 
+
+
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 
+
 def get_user_by_username(db: Session, username: str):
     return db.query(User).filter(User.username == username).first()
+
 
 async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
     credentials_exception = HTTPException(
@@ -59,8 +63,10 @@ async def get_current_active_user(
 def hash_password(password: str):
     return pwd_context.hash(password)
 
+
 def verify_password(plain_password: str, hashed_password: str):
     return pwd_context.verify(plain_password, hashed_password)
+
 
 def authenticate_user(username: str, password: str, db: Session):
     user = db.query(User).filter(User.username==username).first()
@@ -80,27 +86,3 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
     return encoded_jwt
 
 
-
-
-
-
-# def create_access_token(
-#         data: dict,
-#         # expires_delta: Optional[timedelta] = None
-#         ):
-#     to_encode = data.copy()
-#     # if expires_delta:
-#     #     expire = datetime.utcnow() + expires_delta
-#     # else:
-#     #     expire = datetime.utcnow() + timedelta(minutes=15)
-#     expire = datetime.utcnow() + ACCESS_TOKEN_EXPIRE_MINUTES
-#     to_encode.update({"exp": expire})
-#     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
-#     return encoded_jwt
-
-def verify_token(token: str):
-    try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        return payload
-    except JWTError:
-        return None

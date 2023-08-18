@@ -4,7 +4,6 @@ from data.database import SessionLocal, engine
 from data.model import Base
 from apis import candidate, employee, department, user
 from meta.metadata import description, tags_metadata, contact
-# from typing import Annotated
 from fastapi.security import OAuth2PasswordBearer
 
 

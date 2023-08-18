@@ -13,6 +13,7 @@ async def create_candidate(
     dob: str = Query(..., description="Date of birth"),
     skills: str = Query(..., description="Candidate's skills"),
     sex: str = Query(None, description="Candidate's sex"),
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     """Path to create a new candidate"""
@@ -48,7 +49,6 @@ async def get_candidate(candidate_id: int, db: Session = Depends(get_db)):
 async def get_all_candidates(pattern:str | None=None,
                              limit:int | None=None,
                               skip:int | None=None,
-                              current_user: User = Depends(get_current_active_user),
                               db: Session = Depends(get_db)):
     '''Path to get all candidates. Can match name with a pattern, limit the number of list or skip some initial results'''
     match = None
@@ -92,6 +92,7 @@ async def update_candidate(
     dob: str = Query(None, description="Date of birth"),
     skills: str = Query(None, description="Candidate's skills"),
     sex: str = Query(None, description="Candidate's sex"),
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     '''Edit details of an existing candidate. Only the parameters that changes needs to be added, rest will be the same'''
@@ -117,7 +118,11 @@ async def update_candidate(
 
 # Path to delete an user
 @router.delete("/candidates/{candidate_id}", tags=["candidates"])
-async def delete_candidate(candidate_id: int, db: Session = Depends(get_db)):
+async def delete_candidate(
+    candidate_id: int,
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+    ):
     '''Deleting an existing candidate'''
     candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
     if not candidate:
