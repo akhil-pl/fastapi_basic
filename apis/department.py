@@ -13,7 +13,7 @@ class DepartmentCreate(BaseModel):
 @router.post("/departments/", tags=["departments"])
 def create_department(department_data: DepartmentCreate, db: Session = Depends(get_db)):
     '''Path to add a new department'''
-    department = Department(**department_data.dict())
+    department = Department(**department_data.model_dump())
     db.add(department)
     db.commit()
     db.refresh(department)
