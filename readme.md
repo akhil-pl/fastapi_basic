@@ -25,6 +25,13 @@ Or run the following code, it will recursively install all the requirements
 pip install -r requirements.txt
 ```
 
+After that create ```.env``` file inside auth folder and save the following values there
+```.env
+SECRET_KEY = $$Your_SeCRet_kEY$$
+ALGORITHM = <Your hashing algorithn>
+ACCESS_TOKEN_EXPIRE_MINUTES = time in intiger
+```
+
 Now run this code to start the server
 ``` bash
 uvicorn main:app --reload

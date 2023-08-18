@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Path
 from sqlalchemy.orm import Session
-from data.database import SessionLocal, get_db
-from data.model import Candidate
+from data.database import get_db
+from data.model import Candidate, User
+from auth.functions import get_current_active_user
 
 router = APIRouter()
 
@@ -47,6 +48,7 @@ async def get_candidate(candidate_id: int, db: Session = Depends(get_db)):
 async def get_all_candidates(pattern:str | None=None,
                              limit:int | None=None,
                               skip:int | None=None,
+                              current_user: User = Depends(get_current_active_user),
                               db: Session = Depends(get_db)):
     '''Path to get all candidates. Can match name with a pattern, limit the number of list or skip some initial results'''
     match = None

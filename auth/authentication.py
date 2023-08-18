@@ -1,5 +1,9 @@
+import os
+from dotenv import load_dotenv, find_dotenv
 
-SECRET_KEY = "dbdad3655f3c1ad6682790e62d806f3be7de89cb393da8466543d884cd98036e"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+load_dotenv(find_dotenv())
+
+SECRET_KEY = os.environ['SECRET_KEY']
+ALGORITHM = os.environ['ALGORITHM']
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ['ACCESS_TOKEN_EXPIRE_MINUTES'])
 

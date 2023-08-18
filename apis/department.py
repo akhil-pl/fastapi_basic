@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Path
 from sqlalchemy.orm import Session
-from data.database import SessionLocal, get_db
+from data.database import get_db
 from data.model import Department
 from pydantic import BaseModel
 
