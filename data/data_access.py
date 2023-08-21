@@ -39,6 +39,7 @@ def candidate_cache(ttl: int = 600):
         return wrapper
     return decorator
 
+# To remove the caching once the data is changed
 def invalidate_candidate_cache(candidate_id):
     cache_key = f"candidate:{candidate_id}"
     redis_conn.delete(cache_key)
@@ -68,6 +69,7 @@ def all_candidates_cache():
         return wrapper
     return decorator
 
+# For deleting cached once the data is changed
 def invalidate_all_candidates_cache():
     cache_key = "all_candidates"
     redis_conn.delete(cache_key)
