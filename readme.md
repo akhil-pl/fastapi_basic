@@ -2,7 +2,7 @@
 This is a sample app to get familier with FastAPI.
 
 ## Steps to follow
-### You should have python3 and MySQL installed in your system
+### You should have python3, MySQL and redis installed in your system
 And create a database named 'employee_database'
 
 - Setup and run virtual environment
@@ -19,6 +19,8 @@ pip install SQLAlchemy
 pip install "python-jose[cryptography]"
 pip install "passlib[bcrypt]"
 pip install python-multipart
+pip install zxcvbn-python
+pip install redis
 ```
 Or run the following code, it will recursively install all the requirements
 ``` bash
@@ -35,4 +37,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = time in intiger
 Now run this code to start the server
 ``` bash
 uvicorn main:app --reload
+```
+Now run this code to start the redis server for caching
+``` bash
+redis-server
 ```

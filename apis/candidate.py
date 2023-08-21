@@ -2,6 +2,10 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Path
 from sqlalchemy.orm import Session
 from data.database import get_db
 from data.model import Candidate, User
+from data.data_access import (candidate_cache, 
+                              all_candidates_cache, 
+                              invalidate_candidate_cache, 
+                              invalidate_all_candidates_cache)
 from auth.functions import get_current_active_user
 
 router = APIRouter()
@@ -27,6 +31,7 @@ async def create_candidate(
     db.add(candidate)
     db.commit()
     db.refresh(candidate)
+    invalidate_all_candidates_cache() # To delete cached all candidate
     return candidate
 
 
@@ -34,6 +39,7 @@ async def create_candidate(
 
 # Path to get a candidate details given id
 @router.get("/candidates/{candidate_id}", tags=["candidates"])
+@candidate_cache(ttl=600) #Cache for 10 minutes
 async def get_candidate(candidate_id: int, db: Session = Depends(get_db)):
     """Path to get a candidate details given id"""
     candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
@@ -46,6 +52,7 @@ async def get_candidate(candidate_id: int, db: Session = Depends(get_db)):
 
 # Path to get all candidates
 @router.get("/candidates/", tags=["candidates"])
+@all_candidates_cache()  # Cache for 10 minutes (adjust as needed)
 async def get_all_candidates(pattern:str | None=None,
                              limit:int | None=None,
                               skip:int | None=None,
@@ -111,6 +118,8 @@ async def update_candidate(
 
     db.commit()
     db.refresh(candidate)
+    invalidate_all_candidates_cache()
+    invalidate_candidate_cache(candidate_id)
     return candidate
 
 
@@ -130,4 +139,6 @@ async def delete_candidate(
 
     db.delete(candidate)
     db.commit()
+    invalidate_all_candidates_cache()
+    invalidate_candidate_cache(candidate_id)
     return {"message": "Candidate deleted"}

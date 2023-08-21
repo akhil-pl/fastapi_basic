@@ -12,6 +12,7 @@ from auth.authentication import ACCESS_TOKEN_EXPIRE_MINUTES
 from fastapi.security import OAuth2PasswordRequestForm
 from datetime import timedelta
 from typing import Annotated
+import zxcvbn
 
 
 
@@ -21,12 +22,27 @@ router = APIRouter()
 @router.post("/user/register", tags=["users"])
 def register_user(username:str, password:str, db: Session = Depends(get_db)):
     '''Path to create a authorised user'''
+    # Check password strength
+    password_strength = zxcvbn.zxcvbn(password)
+    score = password_strength['score']
+    suggestions = password_strength['feedback']['suggestions']
+    if score < 3:
+        raise HTTPException(
+            status_code=400,
+            detail="Score: "+str(score)+" Weak password. Consider choosing a stronger password. "+", ".join(suggestions),
+            headers={"Passord-Suggestions": ", ".join(suggestions)}
+        )
+    
     hashed_password = hash_password(password)
     new_user = User(username=username, password=hashed_password)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
-    return {"Message": "User registered susssfully", "User": new_user}
+    return {
+        "Message": "User registered successfully",
+        "User": new_user,
+        "Suggestions": suggestions
+    }
 
 # Path to get current user
 @router.get("/users/me", tags=["users"])
