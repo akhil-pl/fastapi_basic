@@ -34,7 +34,7 @@ def candidate_cache(ttl: int = 600):
             else:
                 result = await func(candidate_id, *args, **kwargs)
                 candidate_dict = candidate_to_dict(result)
-                redis_conn.set(cache_key, ttl, json.dumps(candidate_dict, default=default_serializer))
+                redis_conn.setex(cache_key, ttl, json.dumps(candidate_dict, default=default_serializer))
                 return result
         return wrapper
     return decorator
@@ -62,7 +62,7 @@ def all_candidates_cache():
                     for candidate in result:
                         candidate_dict = candidate_to_dict(candidate)
                         serialized_result.append(candidate_dict)
-                    redis_conn.setex(cache_key, json.dumps(serialized_result, default=default_serializer))
+                    redis_conn.set(cache_key, json.dumps(serialized_result, default=default_serializer))
                     return result
             else:
                 return func(pattern, limit, skip, *args, **kwargs)
