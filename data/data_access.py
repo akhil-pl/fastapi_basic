@@ -9,18 +9,40 @@ redis_port = 6379  # Replace with your Redis server port
 redis_conn = redis.StrictRedis(host=redis_host, port=redis_port)
 
 
-def candidate_to_dict(candidate): # Because candidate object received from querry is not serialisable. This can be done using classmaper library also
+def candidate_to_dict(candidate): # Because candidate object received from querry is not serialisable.
     return {
         "id": candidate.id,
         "name": candidate.name,
-        "dob": candidate.dob.strftime('%Y-%m-%d'),  # Convert datetime to string
+        "dob": candidate.dob.strftime('%Y-%m-%d %H:%M:%S'),  # Convert datetime to string
         "sex":candidate.sex,
         "skills":candidate.skills
     }
 
+def employee_to_dict(employee):
+    print("Employee Object: ",employee)
+    return {
+        "id": employee.id,
+        "designation": employee.designation,
+        "start": employee.start.strftime('%Y-%m-%d %H:%M:%S'),
+        "end": employee.end.strftime('%Y-%m-%d %H:%M:%S'),
+        "candidate_id": employee.cid,
+        "department_id": employee.did
+        # "candidate": candidate_to_dict(employee.candidate),  # Nested serialization
+        # "department": {
+        #     "id": employee.department.id,
+        #     "name": employee.department.name
+        # }
+    }
+
+def department_to_dict(department):
+    return {
+        "id":department.id,
+        "name":department.name
+    }
+
 def default_serializer(obj):
     if isinstance(obj, datetime):
-        return obj.strftime('%Y-%m-%d')
+        return obj.strftime('%Y-%m-%d %H:%M:%S')
     raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
 def candidate_cache(ttl: int = 600):
@@ -73,3 +95,56 @@ def all_candidates_cache():
 def invalidate_all_candidates_cache():
     cache_key = "all_candidates"
     redis_conn.delete(cache_key)
+
+
+
+
+
+
+def employee_cache(ttl: int = 600):
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(employee_id, *args, **kwargs):
+            cache_key = f"employee:{employee_id}"
+            cached_data = redis_conn.get(cache_key)
+            if cached_data:
+                return json.loads(cached_data.decode("utf-8"))
+            else:
+                result = await func(employee_id, *args, **kwargs)
+                # employee_dict = employee_to_dict(result)
+                redis_conn.setex(cache_key, ttl, json.dumps(result, default=default_serializer))
+                return result
+        return wrapper
+    return decorator
+
+# To remove the caching once the data is changed
+def invalidate_employee_cache(employee_id):
+    cache_key = f"employee:{employee_id}"
+    redis_conn.delete(cache_key)
+
+
+
+def all_employees_cache():
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            cache_key = "all_employees"
+            cached_data = redis_conn.get(cache_key)
+            if cached_data:
+                return json.loads(cached_data.decode("utf-8"))
+            else:
+                result = await func(*args, **kwargs)
+                serialized_result = []
+                for employee in result:
+                    employee_dict = employee_to_dict(employee)
+                    serialized_result.append(employee_dict)
+                redis_conn.set(cache_key, json.dumps(serialized_result, default=default_serializer))
+                return result
+        return wrapper
+    return decorator
+
+# For deleting cached once the data is changed
+def invalidate_all_employees_cache():
+    cache_key = "all_employees"
+    redis_conn.delete(cache_key)
+

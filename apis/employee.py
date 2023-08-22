@@ -2,13 +2,17 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Path
 from sqlalchemy.orm import Session, selectinload
 from data.database import get_db
 from data.model import Employee, Candidate, Department, User
+from data.data_access import (employee_cache,
+                              all_employees_cache,
+                              invalidate_employee_cache,
+                              invalidate_all_employees_cache)
 from auth.functions import get_current_active_user
 from datetime import datetime
 
 router = APIRouter()
 
 # Define today's date
-current_date = datetime.now().strftime('%Y-%m-%d')
+current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 
 # path to add a new employee,  implemented SCD type 2 for getting the emjployee promotion history
@@ -51,12 +55,14 @@ async def create_employee(
     db.add(new_employee)
     db.commit()
     db.refresh(new_employee)
+    invalidate_all_employees_cache()
     return new_employee
 
 
 
 # Path to get details of a employee
 @router.get("/employees/{employee_id}", tags=["employees"])
+@employee_cache(ttl=600)
 async def get_employee(employee_id: int, db: Session = Depends(get_db)):
     '''Get details of a employee including personal details and department details'''
     employee = (
@@ -88,6 +94,7 @@ async def get_employee(employee_id: int, db: Session = Depends(get_db)):
 
 # Path to get all employees
 @router.get("/employees/", tags=["employees"])
+@all_employees_cache() # Cached without time limit
 async def get_all_employees(db: Session = Depends(get_db)):
     '''Get list of all employee'''
     employees = db.query(Employee).all()
@@ -100,7 +107,6 @@ async def get_all_employees(db: Session = Depends(get_db)):
 @router.put("/employees/{employee_id}", tags=["employees"])
 async def update_employee(
     employees_id: int = Path(..., description="Employee ID"),
-    # cid: int = Query(None, description="Candidate ID"),
     designation: str = Query(None, description="Employee's designation"),
     did: int = Query(None, description="Department ID"),
     start: str = Query(None, description="Start date"),
@@ -124,6 +130,8 @@ async def update_employee(
 
     db.commit()
     db.refresh(employee)
+    invalidate_all_employees_cache()
+    invalidate_employee_cache(employees_id)
     return employee
 
 
@@ -143,4 +151,6 @@ async def delete_employee(
 
     db.delete(employee)
     db.commit()
+    invalidate_all_employees_cache()
+    invalidate_employee_cache(employee_id)
     return {"message": "Employee deleted"}

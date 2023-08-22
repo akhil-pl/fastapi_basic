@@ -52,7 +52,7 @@ async def get_candidate(candidate_id: int, db: Session = Depends(get_db)):
 
 # Path to get all candidates
 @router.get("/candidates/", tags=["candidates"])
-@all_candidates_cache()  # Cache for 10 minutes (adjust as needed)
+@all_candidates_cache()  # Cache indefinitely
 async def get_all_candidates(pattern:str | None=None,
                              limit:int | None=None,
                               skip:int | None=None,
