@@ -9,7 +9,7 @@ def configure_logging():
 
     log_file_path = os.path.join(log_folder, "app.log")
 
-    logging.basicConfig(filename=log_file_path, level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(filename=log_file_path, level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(name)s - %(threadName)s : %(message)s')
 
 def error_middleware(request, call_next):
     try:

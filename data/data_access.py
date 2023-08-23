@@ -2,6 +2,7 @@ import redis
 from functools import wraps
 import json
 from datetime import datetime
+import logging
 
 redis_host = "localhost"  # Replace with your Redis server host
 redis_port = 6379  # Replace with your Redis server port
@@ -52,6 +53,7 @@ def candidate_cache(ttl: int = 600):
             cache_key = f"candidate:{candidate_id}"
             cached_data = redis_conn.get(cache_key)
             if cached_data:
+                logging.debug(f"No ERROR, Just checking logging:") # Just checking loging
                 return json.loads(cached_data.decode("utf-8"))
             else:
                 result = await func(candidate_id, *args, **kwargs)

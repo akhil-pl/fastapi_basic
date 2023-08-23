@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends
 # from fastapi.middleware.cors import CORSMiddleware
-from data.database import SessionLocal, engine
+from data.database import engine
 from data.model import Base
 from apis import candidate, employee, department, user
 from meta.metadata import description, tags_metadata, contact
