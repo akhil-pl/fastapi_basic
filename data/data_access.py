@@ -11,13 +11,16 @@ redis_conn = redis.StrictRedis(host=redis_host, port=redis_port)
 
 
 def candidate_to_dict(candidate): # Because candidate object received from querry is not serialisable.
-    return {
-        "id": candidate.id,
-        "name": candidate.name,
-        "dob": candidate.dob.strftime('%Y-%m-%d %H:%M:%S'),  # Convert datetime to string
-        "sex":candidate.sex,
-        "skills":candidate.skills
-    }
+    try:
+        return {
+            "id": candidate.id,
+            "name": candidate.name,
+            "dob": candidate.dob.strftime('%Y-%m-%d %H:%M:%S'),  # Convert datetime to string
+            "sex":candidate.sex,
+            "skills":candidate.skills
+        }
+    except Exception as e:
+        logging.debug(f"ERROR while serializing candidate: {e}")
 
 def employee_to_dict(employee):
     print("Employee Object: ",employee)
@@ -53,7 +56,7 @@ def candidate_cache(ttl: int = 600):
             cache_key = f"candidate:{candidate_id}"
             cached_data = redis_conn.get(cache_key)
             if cached_data:
-                logging.debug(f"No ERROR, Just checking logging:") # Just checking loging
+                # logging.debug(f"No ERROR, Just checking logging:") # Just checking loging
                 return json.loads(cached_data.decode("utf-8"))
             else:
                 result = await func(candidate_id, *args, **kwargs)

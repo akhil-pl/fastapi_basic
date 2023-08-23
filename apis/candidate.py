@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Path
 from sqlalchemy.orm import Session
+import logging
 from data.database import get_db
 from data.model import Candidate, User
 from data.data_access import (candidate_cache, 
@@ -42,7 +43,10 @@ async def create_candidate(
 @candidate_cache(ttl=600) #Cache for 10 minutes
 async def get_candidate(candidate_id: int, db: Session = Depends(get_db)):
     """Path to get a candidate details given id"""
-    candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
+    try:
+        candidate = db.query(Candidate).filter(Candidate.id == candidate_id).first()
+    except Exception as e:
+        logging.error(f"ERROR while getting candidate: {e}")
     if not candidate:
         raise HTTPException(status_code=404, detail="Candidate not found")
     return candidate
