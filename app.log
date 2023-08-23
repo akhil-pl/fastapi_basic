@@ -1,0 +1,16 @@
+2023-08-23 10:26:22,106 - INFO - SELECT DATABASE()
+2023-08-23 10:26:22,107 - INFO - [raw sql] {}
+2023-08-23 10:26:22,113 - INFO - SELECT @@sql_mode
+2023-08-23 10:26:22,113 - INFO - [raw sql] {}
+2023-08-23 10:26:22,115 - INFO - SELECT @@lower_case_table_names
+2023-08-23 10:26:22,116 - INFO - [raw sql] {}
+2023-08-23 10:26:22,118 - INFO - BEGIN (implicit)
+2023-08-23 10:26:22,120 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 10:26:22,121 - INFO - [raw sql] {}
+2023-08-23 10:26:22,130 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 10:26:22,130 - INFO - [raw sql] {}
+2023-08-23 10:26:22,134 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 10:26:22,134 - INFO - [raw sql] {}
+2023-08-23 10:26:22,139 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 10:26:22,139 - INFO - [raw sql] {}
+2023-08-23 10:26:22,143 - INFO - COMMIT

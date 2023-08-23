@@ -5,6 +5,11 @@ from data.model import Base
 from apis import candidate, employee, department, user
 from meta.metadata import description, tags_metadata, contact
 from fastapi.security import OAuth2PasswordBearer
+import logging
+
+
+# Configure logging
+logging.basicConfig(filename='app.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 app = FastAPI(
