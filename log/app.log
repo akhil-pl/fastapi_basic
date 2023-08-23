@@ -1,0 +1,289 @@
+2023-08-23 11:24:05,911 - INFO - SELECT DATABASE()
+2023-08-23 11:24:05,911 - INFO - [raw sql] {}
+2023-08-23 11:24:05,914 - INFO - SELECT @@sql_mode
+2023-08-23 11:24:05,918 - INFO - [raw sql] {}
+2023-08-23 11:24:05,920 - INFO - SELECT @@lower_case_table_names
+2023-08-23 11:24:05,921 - INFO - [raw sql] {}
+2023-08-23 11:24:05,923 - INFO - BEGIN (implicit)
+2023-08-23 11:24:05,924 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 11:24:05,925 - INFO - [raw sql] {}
+2023-08-23 11:24:05,929 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 11:24:05,931 - INFO - [raw sql] {}
+2023-08-23 11:24:05,938 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 11:24:05,940 - INFO - [raw sql] {}
+2023-08-23 11:24:05,944 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 11:24:05,945 - INFO - [raw sql] {}
+2023-08-23 11:24:05,950 - INFO - COMMIT
+2023-08-23 11:25:25,137 - INFO - SELECT DATABASE()
+2023-08-23 11:25:25,138 - INFO - [raw sql] {}
+2023-08-23 11:25:25,142 - INFO - SELECT @@sql_mode
+2023-08-23 11:25:25,142 - INFO - [raw sql] {}
+2023-08-23 11:25:25,145 - INFO - SELECT @@lower_case_table_names
+2023-08-23 11:25:25,145 - INFO - [raw sql] {}
+2023-08-23 11:25:25,148 - INFO - BEGIN (implicit)
+2023-08-23 11:25:25,151 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 11:25:25,151 - INFO - [raw sql] {}
+2023-08-23 11:25:25,156 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 11:25:25,156 - INFO - [raw sql] {}
+2023-08-23 11:25:25,160 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 11:25:25,161 - INFO - [raw sql] {}
+2023-08-23 11:25:25,164 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 11:25:25,165 - INFO - [raw sql] {}
+2023-08-23 11:25:25,168 - INFO - COMMIT
+2023-08-23 11:25:36,139 - INFO - BEGIN (implicit)
+2023-08-23 11:25:36,155 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 11:25:36,156 - INFO - [generated in 0.00266s] {'id_1': 7, 'param_1': 1}
+2023-08-23 11:25:36,163 - INFO - ROLLBACK
+2023-08-23 11:31:48,425 - INFO - SELECT DATABASE()
+2023-08-23 11:31:48,426 - INFO - [raw sql] {}
+2023-08-23 11:31:48,430 - INFO - SELECT @@sql_mode
+2023-08-23 11:31:48,432 - INFO - [raw sql] {}
+2023-08-23 11:31:48,437 - INFO - SELECT @@lower_case_table_names
+2023-08-23 11:31:48,438 - INFO - [raw sql] {}
+2023-08-23 11:31:48,441 - INFO - BEGIN (implicit)
+2023-08-23 11:31:48,442 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 11:31:48,442 - INFO - [raw sql] {}
+2023-08-23 11:31:48,448 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 11:31:48,448 - INFO - [raw sql] {}
+2023-08-23 11:31:48,452 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 11:31:48,452 - INFO - [raw sql] {}
+2023-08-23 11:31:48,464 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 11:31:48,464 - INFO - [raw sql] {}
+2023-08-23 11:31:48,468 - INFO - COMMIT
+2023-08-23 11:31:51,059 - INFO - BEGIN (implicit)
+2023-08-23 11:31:51,072 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 11:31:51,074 - INFO - [generated in 0.00278s] {'id_1': 7, 'param_1': 1}
+2023-08-23 11:31:51,082 - INFO - ROLLBACK
+2023-08-23 11:33:20,897 - INFO - SELECT DATABASE()
+2023-08-23 11:33:20,897 - INFO - [raw sql] {}
+2023-08-23 11:33:20,899 - INFO - SELECT @@sql_mode
+2023-08-23 11:33:20,900 - INFO - [raw sql] {}
+2023-08-23 11:33:20,901 - INFO - SELECT @@lower_case_table_names
+2023-08-23 11:33:20,902 - INFO - [raw sql] {}
+2023-08-23 11:33:20,904 - INFO - BEGIN (implicit)
+2023-08-23 11:33:20,905 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 11:33:20,906 - INFO - [raw sql] {}
+2023-08-23 11:33:20,912 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 11:33:20,913 - INFO - [raw sql] {}
+2023-08-23 11:33:20,918 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 11:33:20,918 - INFO - [raw sql] {}
+2023-08-23 11:33:20,922 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 11:33:20,922 - INFO - [raw sql] {}
+2023-08-23 11:33:20,927 - INFO - COMMIT
+2023-08-23 11:33:34,941 - INFO - BEGIN (implicit)
+2023-08-23 11:33:34,960 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 11:33:34,960 - INFO - [generated in 0.00116s] {'id_1': 8, 'param_1': 1}
+2023-08-23 11:33:34,967 - INFO - ROLLBACK
+2023-08-23 11:43:46,235 - INFO - BEGIN (implicit)
+2023-08-23 11:43:46,237 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 11:43:46,244 - INFO - [cached since 611.3s ago] {'id_1': 8, 'param_1': 1}
+2023-08-23 11:43:46,255 - INFO - ROLLBACK
+2023-08-23 11:44:14,825 - INFO - SELECT DATABASE()
+2023-08-23 11:44:14,826 - INFO - [raw sql] {}
+2023-08-23 11:44:14,827 - INFO - SELECT @@sql_mode
+2023-08-23 11:44:14,828 - INFO - [raw sql] {}
+2023-08-23 11:44:14,829 - INFO - SELECT @@lower_case_table_names
+2023-08-23 11:44:14,829 - INFO - [raw sql] {}
+2023-08-23 11:44:14,833 - INFO - BEGIN (implicit)
+2023-08-23 11:44:14,834 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 11:44:14,835 - INFO - [raw sql] {}
+2023-08-23 11:44:14,841 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 11:44:14,842 - INFO - [raw sql] {}
+2023-08-23 11:44:14,851 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 11:44:14,851 - INFO - [raw sql] {}
+2023-08-23 11:44:14,855 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 11:44:14,855 - INFO - [raw sql] {}
+2023-08-23 11:44:14,858 - INFO - COMMIT
+2023-08-23 11:44:28,279 - INFO - SELECT DATABASE()
+2023-08-23 11:44:28,279 - INFO - [raw sql] {}
+2023-08-23 11:44:28,282 - INFO - SELECT @@sql_mode
+2023-08-23 11:44:28,282 - INFO - [raw sql] {}
+2023-08-23 11:44:28,283 - INFO - SELECT @@lower_case_table_names
+2023-08-23 11:44:28,283 - INFO - [raw sql] {}
+2023-08-23 11:44:28,286 - INFO - BEGIN (implicit)
+2023-08-23 11:44:28,287 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 11:44:28,287 - INFO - [raw sql] {}
+2023-08-23 11:44:28,291 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 11:44:28,292 - INFO - [raw sql] {}
+2023-08-23 11:44:28,295 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 11:44:28,296 - INFO - [raw sql] {}
+2023-08-23 11:44:28,299 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 11:44:28,299 - INFO - [raw sql] {}
+2023-08-23 11:44:28,303 - INFO - COMMIT
+2023-08-23 11:45:05,376 - INFO - BEGIN (implicit)
+2023-08-23 11:45:05,394 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 11:45:05,395 - INFO - [generated in 0.00529s] {'id_1': 7, 'param_1': 1}
+2023-08-23 11:45:05,403 - INFO - ROLLBACK
+2023-08-23 11:54:46,835 - INFO - BEGIN (implicit)
+2023-08-23 11:54:46,837 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 11:54:46,839 - INFO - [cached since 581.4s ago] {'id_1': 8, 'param_1': 1}
+2023-08-23 11:54:46,848 - INFO - ROLLBACK
+2023-08-23 11:56:29,454 - INFO - BEGIN (implicit)
+2023-08-23 11:56:29,458 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 11:56:29,460 - INFO - [cached since 684.1s ago] {'id_1': 7, 'param_1': 1}
+2023-08-23 11:56:29,471 - INFO - ROLLBACK
+2023-08-23 11:59:29,206 - INFO - SELECT DATABASE()
+2023-08-23 11:59:29,207 - INFO - [raw sql] {}
+2023-08-23 11:59:29,209 - INFO - SELECT @@sql_mode
+2023-08-23 11:59:29,210 - INFO - [raw sql] {}
+2023-08-23 11:59:29,213 - INFO - SELECT @@lower_case_table_names
+2023-08-23 11:59:29,214 - INFO - [raw sql] {}
+2023-08-23 11:59:29,217 - INFO - BEGIN (implicit)
+2023-08-23 11:59:29,219 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 11:59:29,219 - INFO - [raw sql] {}
+2023-08-23 11:59:29,228 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 11:59:29,228 - INFO - [raw sql] {}
+2023-08-23 11:59:29,231 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 11:59:29,232 - INFO - [raw sql] {}
+2023-08-23 11:59:29,235 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 11:59:29,235 - INFO - [raw sql] {}
+2023-08-23 11:59:29,238 - INFO - COMMIT
+2023-08-23 12:00:03,739 - INFO - SELECT DATABASE()
+2023-08-23 12:00:03,739 - INFO - [raw sql] {}
+2023-08-23 12:00:03,742 - INFO - SELECT @@sql_mode
+2023-08-23 12:00:03,742 - INFO - [raw sql] {}
+2023-08-23 12:00:03,743 - INFO - SELECT @@lower_case_table_names
+2023-08-23 12:00:03,744 - INFO - [raw sql] {}
+2023-08-23 12:00:03,747 - INFO - BEGIN (implicit)
+2023-08-23 12:00:03,748 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 12:00:03,748 - INFO - [raw sql] {}
+2023-08-23 12:00:03,753 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 12:00:03,754 - INFO - [raw sql] {}
+2023-08-23 12:00:03,761 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 12:00:03,761 - INFO - [raw sql] {}
+2023-08-23 12:00:03,764 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 12:00:03,765 - INFO - [raw sql] {}
+2023-08-23 12:00:03,768 - INFO - COMMIT
+2023-08-23 12:00:41,243 - INFO - BEGIN (implicit)
+2023-08-23 12:00:41,259 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 12:00:41,260 - INFO - [generated in 0.00093s] {'id_1': 4, 'param_1': 1}
+2023-08-23 12:00:41,265 - INFO - ROLLBACK
+2023-08-23 12:01:46,986 - INFO - SELECT DATABASE()
+2023-08-23 12:01:46,986 - INFO - [raw sql] {}
+2023-08-23 12:01:46,989 - INFO - SELECT @@sql_mode
+2023-08-23 12:01:46,990 - INFO - [raw sql] {}
+2023-08-23 12:01:46,991 - INFO - SELECT @@lower_case_table_names
+2023-08-23 12:01:46,992 - INFO - [raw sql] {}
+2023-08-23 12:01:46,995 - INFO - BEGIN (implicit)
+2023-08-23 12:01:46,996 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 12:01:46,996 - INFO - [raw sql] {}
+2023-08-23 12:01:47,001 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 12:01:47,001 - INFO - [raw sql] {}
+2023-08-23 12:01:47,005 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 12:01:47,005 - INFO - [raw sql] {}
+2023-08-23 12:01:47,009 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 12:01:47,009 - INFO - [raw sql] {}
+2023-08-23 12:01:47,012 - INFO - COMMIT
+2023-08-23 12:05:27,821 - INFO - SELECT DATABASE()
+2023-08-23 12:05:27,822 - INFO - [raw sql] {}
+2023-08-23 12:05:27,823 - INFO - SELECT @@sql_mode
+2023-08-23 12:05:27,824 - INFO - [raw sql] {}
+2023-08-23 12:05:27,825 - INFO - SELECT @@lower_case_table_names
+2023-08-23 12:05:27,825 - INFO - [raw sql] {}
+2023-08-23 12:05:27,828 - INFO - BEGIN (implicit)
+2023-08-23 12:05:27,829 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 12:05:27,829 - INFO - [raw sql] {}
+2023-08-23 12:05:27,837 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 12:05:27,837 - INFO - [raw sql] {}
+2023-08-23 12:05:27,840 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 12:05:27,841 - INFO - [raw sql] {}
+2023-08-23 12:05:27,843 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 12:05:27,844 - INFO - [raw sql] {}
+2023-08-23 12:05:27,847 - INFO - COMMIT
+2023-08-23 12:07:44,861 - INFO - BEGIN (implicit)
+2023-08-23 12:07:44,886 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 12:07:44,887 - INFO - [generated in 0.00522s] {'id_1': 4, 'param_1': 1}
+2023-08-23 12:07:44,893 - INFO - ROLLBACK
+2023-08-23 12:08:06,400 - INFO - BEGIN (implicit)
+2023-08-23 12:08:06,401 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 12:08:06,402 - INFO - [cached since 21.52s ago] {'id_1': 7, 'param_1': 1}
+2023-08-23 12:08:06,408 - INFO - ROLLBACK
+2023-08-23 12:13:27,126 - INFO - SELECT DATABASE()
+2023-08-23 12:13:27,127 - INFO - [raw sql] {}
+2023-08-23 12:13:27,130 - INFO - SELECT @@sql_mode
+2023-08-23 12:13:27,131 - INFO - [raw sql] {}
+2023-08-23 12:13:27,134 - INFO - SELECT @@lower_case_table_names
+2023-08-23 12:13:27,135 - INFO - [raw sql] {}
+2023-08-23 12:13:27,138 - INFO - BEGIN (implicit)
+2023-08-23 12:13:27,139 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 12:13:27,140 - INFO - [raw sql] {}
+2023-08-23 12:13:27,145 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 12:13:27,146 - INFO - [raw sql] {}
+2023-08-23 12:13:27,153 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 12:13:27,153 - INFO - [raw sql] {}
+2023-08-23 12:13:27,157 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 12:13:27,158 - INFO - [raw sql] {}
+2023-08-23 12:13:27,161 - INFO - COMMIT
+2023-08-23 12:14:13,636 - INFO - SELECT DATABASE()
+2023-08-23 12:14:13,636 - INFO - [raw sql] {}
+2023-08-23 12:14:13,639 - INFO - SELECT @@sql_mode
+2023-08-23 12:14:13,639 - INFO - [raw sql] {}
+2023-08-23 12:14:13,640 - INFO - SELECT @@lower_case_table_names
+2023-08-23 12:14:13,640 - INFO - [raw sql] {}
+2023-08-23 12:14:13,644 - INFO - BEGIN (implicit)
+2023-08-23 12:14:13,645 - INFO - DESCRIBE `employee_database`.`users`
+2023-08-23 12:14:13,646 - INFO - [raw sql] {}
+2023-08-23 12:14:13,651 - INFO - DESCRIBE `employee_database`.`candidate`
+2023-08-23 12:14:13,651 - INFO - [raw sql] {}
+2023-08-23 12:14:13,655 - INFO - DESCRIBE `employee_database`.`employees`
+2023-08-23 12:14:13,655 - INFO - [raw sql] {}
+2023-08-23 12:14:13,659 - INFO - DESCRIBE `employee_database`.`departments`
+2023-08-23 12:14:13,659 - INFO - [raw sql] {}
+2023-08-23 12:14:13,662 - INFO - COMMIT
+2023-08-23 12:16:12,377 - INFO - BEGIN (implicit)
+2023-08-23 12:16:12,383 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2023-08-23 12:16:12,383 - INFO - [generated in 0.00080s] {'username_1': 'akhil', 'param_1': 1}
+2023-08-23 12:16:12,829 - INFO - ROLLBACK
+2023-08-23 12:16:21,396 - INFO - BEGIN (implicit)
+2023-08-23 12:16:21,399 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2023-08-23 12:16:21,403 - INFO - [cached since 9.021s ago] {'username_1': 'akhil', 'param_1': 1}
+2023-08-23 12:16:21,417 - INFO - SELECT candidate.skills AS candidate_skills, candidate.id AS candidate_id, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-23 12:16:21,417 - INFO - [generated in 0.00223s] {'id_1': 7, 'param_1': 1}
+2023-08-23 12:16:21,432 - INFO - UPDATE candidate SET skills=%(skills)s WHERE candidate.id = %(candidate_id)s
+2023-08-23 12:16:21,433 - INFO - [generated in 0.00480s] {'skills': 'Excel, Word', 'candidate_id': 7}
+2023-08-23 12:16:21,438 - INFO - COMMIT
+2023-08-23 12:16:21,450 - INFO - BEGIN (implicit)
+2023-08-23 12:16:21,454 - INFO - SELECT candidate.skills, candidate.id, candidate.name, candidate.dob, candidate.sex 
+FROM candidate 
+WHERE candidate.id = %(pk_1)s
+2023-08-23 12:16:21,455 - INFO - [generated in 0.00136s] {'pk_1': 7}
+2023-08-23 12:16:21,464 - INFO - ROLLBACK

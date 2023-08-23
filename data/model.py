@@ -31,7 +31,7 @@ class Employee(Base):
     designation = Column(String(255))
     did = Column(Integer, ForeignKey('departments.id'))
     start = Column(DateTime)
-    end = Column(DateTime)
+    end = Column(DateTime) # dsajhgd
 
 
 class Department(Base):

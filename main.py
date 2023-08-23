@@ -5,11 +5,8 @@ from data.model import Base
 from apis import candidate, employee, department, user
 from meta.metadata import description, tags_metadata, contact
 from fastapi.security import OAuth2PasswordBearer
-import logging
+from log.logs import configure_logging, error_middleware
 
-
-# Configure logging
-logging.basicConfig(filename='app.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 app = FastAPI(
@@ -21,6 +18,12 @@ app = FastAPI(
     contact=contact,
     openapi_tags=tags_metadata,
 )
+
+# Configure logging
+configure_logging()
+
+# Apply the error middleware globally
+app.middleware("http")(error_middleware)
 
 # app.add_middleware(
 #     CORSMiddleware,
