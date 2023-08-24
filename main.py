@@ -2,7 +2,7 @@ from fastapi import FastAPI, Depends
 # from fastapi.middleware.cors import CORSMiddleware
 from data.database import engine
 from data.model import Base
-from apis import candidate, employee, department, user
+from apis import candidate, employee, department, user, jobs_api
 from meta.metadata import description, tags_metadata, contact
 from fastapi.security import OAuth2PasswordBearer
 from log.logs import configure_logging, error_middleware
@@ -47,3 +47,4 @@ app.include_router(user.router)
 app.include_router(candidate.router)
 app.include_router(employee.router)
 app.include_router(department.router)
+app.include_router(jobs_api.router)

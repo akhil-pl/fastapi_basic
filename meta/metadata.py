@@ -38,6 +38,10 @@ tags_metadata = [
         "name": "employees",
         "description": "Manage employees. CRUD operations and get all employees.",
     },
+    {
+        "name": "jobs",
+        "description": "For trigering backend jobs.",
+    },
 ]
 
 
