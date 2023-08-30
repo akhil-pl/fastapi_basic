@@ -28,4 +28,6 @@ def candidate_csv(db: Session = Depends(get_db)):
             writer = csv.writer(f)
             writer.writerow(header)
             writer.writerows(data)
-    
+
+
+            
