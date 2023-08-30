@@ -153,3 +153,10 @@ def invalidate_all_employees_cache():
     cache_key = "all_employees"
     redis_conn.delete(cache_key)
 
+# For clearing all cache
+def flush_all():
+    try:
+        redis_conn.flushall()  # Clear all cached data
+        return {"Cache cleared successfully"}
+    except Exception as e:
+        return {f"An error occurred: {str(e)}"}

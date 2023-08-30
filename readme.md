@@ -23,6 +23,7 @@ pip install "passlib[bcrypt]"
 pip install python-multipart
 pip install zxcvbn-python
 pip install redis
+pip install celery
 ```
 Or run the following code, it will recursively install all the requirements
 ``` bash

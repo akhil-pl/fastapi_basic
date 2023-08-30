@@ -40,7 +40,7 @@ tags_metadata = [
     },
     {
         "name": "jobs",
-        "description": "For trigering backend jobs.",
+        "description": "For trigering backend jobs. **Not Implemented yet**",
     },
 ]
 

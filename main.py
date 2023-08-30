@@ -22,7 +22,7 @@ app = FastAPI(
 # Configure logging
 configure_logging()
 
-# Apply the error middleware globally
+# Apply the error middleware globally, Not working
 app.middleware("http")(error_middleware)
 
 # app.add_middleware(
