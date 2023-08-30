@@ -3,9 +3,18 @@
 #### Getting started with FastAPI
 This is a sample app to get familier with FastAPI. The aim of the app is to create RESTful web api to connect with a MySQL database and do CRUD operations.
 
-## Steps to follow
+
 ### You should have python3, MySQL and redis installed in your system
 And create a database named 'employee_database'
+
+### DB Schema Design
+
+![ER Diagram!](Diagram1.png "ER Diagram")
+
+This is the ER diagram of the database schema. Employee table is a one-to-many relation table of Candidate and Department table. Each relation is having delete cascade option, so once a parent object is deleted all its children will be deleted.
+
+
+## Steps to follow
 
 - Setup and run virtual environment
 ``` bash
@@ -29,7 +38,6 @@ Or run the following code, it will recursively install all the requirements
 ``` bash
 pip install -r requirements.txt
 ```
-
 After that create ```.env``` file inside auth folder and save the following values there
 ```.env
 SECRET_KEY = $$Your_SeCRet_kEY$$

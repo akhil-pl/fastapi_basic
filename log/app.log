@@ -680,3 +680,30 @@ FROM candidate
 2023-08-30 15:45:48,280 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
 2023-08-30 15:45:48,281 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
 2023-08-30 15:45:48,284 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-08-30 16:15:25,653 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-08-30 16:15:25,672 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT employees.id AS employees_id, employees.cid AS employees_cid, employees.designation AS employees_designation, employees.did AS employees_did, employees.start AS employees_start, employees.end AS employees_end 
+FROM employees 
+WHERE employees.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-30 16:15:25,675 - INFO - sqlalchemy.engine.Engine - MainThread : [generated in 0.00351s] {'id_1': 4, 'param_1': 1}
+2023-08-30 16:15:26,534 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-08-30 16:15:34,936 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-08-30 16:15:34,940 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT employees.id AS employees_id, employees.cid AS employees_cid, employees.designation AS employees_designation, employees.did AS employees_did, employees.start AS employees_start, employees.end AS employees_end 
+FROM employees
+2023-08-30 16:15:34,941 - INFO - sqlalchemy.engine.Engine - MainThread : [generated in 0.00250s] {}
+2023-08-30 16:15:34,956 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-08-30 16:15:48,793 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-08-30 16:15:48,799 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT employees.id AS employees_id, employees.cid AS employees_cid, employees.designation AS employees_designation, employees.did AS employees_did, employees.start AS employees_start, employees.end AS employees_end 
+FROM employees 
+WHERE employees.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-08-30 16:15:48,807 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 23.13s ago] {'id_1': 6, 'param_1': 1}
+2023-08-30 16:15:48,821 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT departments.id AS departments_id, departments.name AS departments_name 
+FROM departments 
+WHERE departments.id IN (%(primary_keys_1)s)
+2023-08-30 16:15:48,822 - INFO - sqlalchemy.engine.Engine - MainThread : [generated in 0.00607s] {'primary_keys_1': 5}
+2023-08-30 16:15:48,840 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT candidate.id AS candidate_id, candidate.skills AS candidate_skills, candidate.name AS candidate_name, candidate.dob AS candidate_dob, candidate.sex AS candidate_sex 
+FROM candidate 
+WHERE candidate.id IN (%(primary_keys_1)s)
+2023-08-30 16:15:48,841 - INFO - sqlalchemy.engine.Engine - MainThread : [generated in 0.00483s] {'primary_keys_1': 4}
+2023-08-30 16:15:48,847 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
