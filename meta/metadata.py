@@ -42,6 +42,10 @@ tags_metadata = [
         "name": "jobs",
         "description": "For trigering backend jobs. **Not Implemented yet**",
     },
+    {
+        "name": "circuitbreaker",
+        "description": "Implementing circuit breaker while calling external apis.",
+    },
 ]
 
 
