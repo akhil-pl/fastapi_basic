@@ -1,118 +1,71 @@
-2023-09-05 12:32:54,386 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
-2023-09-05 12:32:54,386 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:32:54,389 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
-2023-09-05 12:32:54,389 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:32:54,391 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
-2023-09-05 12:32:54,391 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:32:54,396 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
-2023-09-05 12:32:54,397 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
-2023-09-05 12:32:54,398 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:32:54,404 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
-2023-09-05 12:32:54,405 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:32:54,411 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
-2023-09-05 12:32:54,411 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:32:54,416 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
-2023-09-05 12:32:54,417 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:32:54,420 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
-2023-09-05 12:33:04,604 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
-2023-09-05 12:33:04,604 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:33:04,609 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
-2023-09-05 12:33:04,609 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:33:04,611 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
-2023-09-05 12:33:04,611 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:33:04,617 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
-2023-09-05 12:33:04,618 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
-2023-09-05 12:33:04,619 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:33:04,623 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
-2023-09-05 12:33:04,623 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:33:04,627 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
-2023-09-05 12:33:04,627 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:33:04,630 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
-2023-09-05 12:33:04,630 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 12:33:04,634 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
-2023-09-05 14:22:55,414 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
-2023-09-05 14:22:55,415 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 14:22:55,417 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
-2023-09-05 14:22:55,418 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 14:22:55,419 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
-2023-09-05 14:22:55,419 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 14:22:55,422 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
-2023-09-05 14:22:55,422 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
-2023-09-05 14:22:55,423 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 14:22:55,427 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
-2023-09-05 14:22:55,427 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 14:22:55,432 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
-2023-09-05 14:22:55,432 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 14:22:55,436 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
-2023-09-05 14:22:55,436 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 14:22:55,440 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
-2023-09-05 17:00:26,650 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
-2023-09-05 17:00:26,651 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 17:00:26,653 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
-2023-09-05 17:00:26,653 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 17:00:26,655 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
-2023-09-05 17:00:26,656 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 17:00:26,659 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
-2023-09-05 17:00:26,660 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
-2023-09-05 17:00:26,660 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 17:00:26,665 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
-2023-09-05 17:00:26,665 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 17:00:26,669 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
-2023-09-05 17:00:26,669 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 17:00:26,674 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
-2023-09-05 17:00:26,674 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-05 17:00:26,677 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
-2023-09-06 09:03:38,106 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
-2023-09-06 09:03:38,107 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 09:03:38,111 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
-2023-09-06 09:03:38,112 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 09:03:38,115 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
-2023-09-06 09:03:38,115 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 09:03:38,118 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
-2023-09-06 09:03:38,121 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
-2023-09-06 09:03:38,122 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 09:03:38,138 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
-2023-09-06 09:03:38,139 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 09:03:38,144 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
-2023-09-06 09:03:38,145 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 09:03:38,148 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
-2023-09-06 09:03:38,149 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 09:03:38,153 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
-2023-09-06 09:42:05,880 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
+2023-09-13 09:59:15,457 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
+2023-09-13 09:59:15,457 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-13 09:59:15,459 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
+2023-09-13 09:59:15,460 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-13 09:59:15,461 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
+2023-09-13 09:59:15,461 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-13 09:59:15,463 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-13 09:59:15,464 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-13 09:59:15,464 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-13 09:59:15,469 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-13 09:59:15,469 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-13 09:59:15,473 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-13 09:59:15,473 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-13 09:59:15,477 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-13 09:59:15,477 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-13 09:59:15,480 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-13 10:12:43,987 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
 To install, run: pip install email-validator
-2023-09-06 09:42:54,084 - DEBUG - urllib3.connectionpool - AnyIO worker thread : Starting new HTTPS connection (1): swap1.dev:443
-2023-09-06 09:43:01,350 - DEBUG - urllib3.connectionpool - AnyIO worker thread : Starting new HTTPS connection (1): swap1.dev:443
-2023-09-06 09:43:05,682 - DEBUG - urllib3.connectionpool - AnyIO worker thread : Starting new HTTPS connection (1): swap1.dev:443
-2023-09-06 09:43:10,205 - DEBUG - urllib3.connectionpool - AnyIO worker thread : Starting new HTTPS connection (1): swap1.dev:443
-2023-09-06 09:43:13,240 - DEBUG - urllib3.connectionpool - AnyIO worker thread : Starting new HTTPS connection (1): swap1.dev:443
-2023-09-06 09:43:16,260 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:13.260507 (5 failures, 57 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:43:39,784 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:13.783983 (5 failures, 34 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:43:44,253 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:14.253190 (5 failures, 30 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:43:47,852 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:13.851916 (5 failures, 26 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:43:54,026 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:14.026778 (5 failures, 20 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:44:02,372 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:13.372283 (5 failures, 11 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:44:05,483 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:13.483015 (5 failures, 8 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:44:07,837 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:13.837031 (5 failures, 6 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:44:10,661 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:14:13.661159 (5 failures, 3 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d901ea0>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 09:44:13,403 - DEBUG - urllib3.connectionpool - AnyIO worker thread : Starting new HTTPS connection (1): swap1.dev:443
-2023-09-06 09:44:17,007 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 04:15:14.007644 (6 failures, 57 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d992410>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 11:02:30,460 - DEBUG - urllib3.connectionpool - AnyIO worker thread : Starting new HTTPS connection (1): swap1.dev:443
-2023-09-06 11:02:33,809 - ERROR - apis.circuitbreaker - AnyIO worker thread : Circuit breaker active: Circuit "call_external" OPEN until 2023-09-06 05:33:30.809818 (7 failures, 57 sec remaining) (last_failure: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'swap1.dev\', port=443): Max retries exceeded with url: /api/planets/1/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fbf8d990340>: Failed to resolve \'swap1.dev\' ([Errno -2] Name or service not known)"))')))
-2023-09-06 11:27:34,630 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
-2023-09-06 11:27:34,631 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 11:27:34,633 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
-2023-09-06 11:27:34,634 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 11:27:34,635 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
-2023-09-06 11:27:34,635 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 11:27:34,637 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
-2023-09-06 11:27:34,638 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
-2023-09-06 11:27:34,639 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 11:27:34,644 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
-2023-09-06 11:27:34,646 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 11:27:34,649 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
-2023-09-06 11:27:34,650 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 11:27:34,654 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
-2023-09-06 11:27:34,654 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
-2023-09-06 11:27:34,657 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
-2023-09-06 11:28:08,725 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
-To install, run: pip install email-validator
+2023-09-13 18:12:06,986 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-09-13 18:12:06,986 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[0:10]
+2023-09-13 18:12:06,986 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[11:19]
+2023-09-13 18:12:06,986 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-09-13 18:12:06,986 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-09-13 18:12:06,986 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[20:28]
+2023-09-13 18:12:06,987 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[29:34]
+2023-09-13 18:12:06,987 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-09-13 18:12:06,987 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-09-13 18:12:06,987 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[35:43]
+2023-09-13 18:12:06,987 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[44:52]
+2023-09-13 18:12:06,987 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-09-13 18:12:06,987 - DEBUG - multipart.multipart - MainThread : Calling on_end with no data
+2023-09-13 18:12:07,004 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-13 18:12:11,737 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-09-13 18:12:11,738 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[0:10]
+2023-09-13 18:12:11,738 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[11:19]
+2023-09-13 18:12:11,738 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-09-13 18:12:11,738 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-09-13 18:12:11,739 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[20:28]
+2023-09-13 18:12:11,739 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[29:34]
+2023-09-13 18:12:11,739 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-09-13 18:12:11,740 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-09-13 18:12:11,740 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[35:43]
+2023-09-13 18:12:11,740 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[44:52]
+2023-09-13 18:12:11,741 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-09-13 18:12:11,741 - DEBUG - multipart.multipart - MainThread : Calling on_end with no data
+2023-09-13 18:12:11,805 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-13 18:12:11,807 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2023-09-13 18:12:11,807 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 4.799s ago] {'username_1': 'akhil', 'param_1': 1}
+2023-09-13 18:12:11,866 - DEBUG - passlib.handlers.bcrypt - MainThread : detected 'bcrypt' backend, version '4.0.1'
+2023-09-13 18:12:11,867 - DEBUG - passlib.handlers.bcrypt - MainThread : 'bcrypt' backend lacks $2$ support, enabling workaround
+2023-09-13 18:12:12,274 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-09-13 18:12:30,732 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-13 18:12:30,735 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2023-09-13 18:12:30,737 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 23.73s ago] {'username_1': 'akhil', 'param_1': 1}
+2023-09-13 18:12:30,749 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-09-13 18:14:28,138 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : BEGIN (implicit)
+2023-09-13 18:14:28,141 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2023-09-13 18:14:28,142 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [generated in 0.00159s] {'username': 'user', 'password': '$2b$12$HERf4Lx5igW6qDOLLBha9.kNYNx0hVJ2ebAJpi5Ccgofu4B1ZUd2K'}
+2023-09-13 18:14:28,151 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : COMMIT
+2023-09-13 18:14:28,159 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : BEGIN (implicit)
+2023-09-13 18:14:28,161 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : SELECT users.id, users.username, users.password 
+FROM users 
+WHERE users.id = %(pk_1)s
+2023-09-13 18:14:28,162 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [generated in 0.00072s] {'pk_1': 3}
+2023-09-13 18:14:28,172 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
