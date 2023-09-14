@@ -249,3 +249,13 @@ To install, run: pip install email-validator
 2023-09-14 11:56:38,372 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
 2023-09-14 11:56:38,372 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
 2023-09-14 11:56:38,383 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 12:55:29,633 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 12:55:29,635 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 12:55:29,635 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 12:55:29,638 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 12:55:29,638 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 12:55:29,643 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 12:55:29,643 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 12:55:29,648 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 12:55:29,648 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 12:55:29,652 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
