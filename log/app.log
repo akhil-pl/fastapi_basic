@@ -69,3 +69,183 @@ FROM users
 WHERE users.id = %(pk_1)s
 2023-09-13 18:14:28,162 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [generated in 0.00072s] {'pk_1': 3}
 2023-09-13 18:14:28,172 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-09-14 10:16:29,118 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT DATABASE()
+2023-09-14 10:16:29,120 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:16:29,125 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@sql_mode
+2023-09-14 10:16:29,125 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:16:29,127 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT @@lower_case_table_names
+2023-09-14 10:16:29,128 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:16:29,131 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 10:16:29,133 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 10:16:29,133 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:16:29,151 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 10:16:29,151 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:16:29,157 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 10:16:29,157 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:16:29,164 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 10:16:29,164 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:16:29,168 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 10:39:42,665 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 10:39:42,666 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 10:39:42,666 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:39:42,669 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 10:39:42,670 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:39:42,673 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 10:39:42,674 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:39:42,677 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 10:39:42,678 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:39:42,681 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 10:43:44,058 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 10:43:44,059 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 10:43:44,060 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:43:44,063 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 10:43:44,063 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:43:44,067 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 10:43:44,067 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:43:44,070 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 10:43:44,071 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:43:44,076 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 10:46:12,500 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 10:46:12,501 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 10:46:12,501 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:46:12,504 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 10:46:12,505 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:46:12,508 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 10:46:12,508 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:46:12,512 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 10:46:12,513 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:46:12,516 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 10:49:40,815 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 10:49:40,816 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 10:49:40,817 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:49:40,820 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 10:49:40,820 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:49:40,823 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 10:49:40,824 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:49:40,828 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 10:49:40,829 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:49:40,833 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 10:50:21,268 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 10:50:21,269 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 10:50:21,269 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:50:21,273 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 10:50:21,274 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:50:21,277 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 10:50:21,277 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:50:21,281 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 10:50:21,281 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:50:21,285 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 10:55:51,063 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 10:55:51,069 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 10:55:51,070 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:55:51,074 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 10:55:51,074 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:55:51,077 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 10:55:51,078 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:55:51,081 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 10:55:51,081 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 10:55:51,084 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:04:05,731 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:04:05,732 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:04:05,732 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:04:05,735 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:04:05,735 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:04:05,739 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:04:05,739 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:04:05,743 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:04:05,743 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:04:05,746 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:15:32,359 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:15:32,360 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:15:32,361 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:15:32,364 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:15:32,365 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:15:32,368 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:15:32,369 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:15:32,372 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:15:32,373 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:15:32,376 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:23:26,156 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:23:26,158 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:23:26,158 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:23:26,161 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:23:26,163 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:23:26,167 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:23:26,167 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:23:26,170 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:23:26,171 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:23:26,173 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:27:40,817 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:27:40,818 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:27:40,818 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:27:40,822 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:27:40,822 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:27:40,826 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:27:40,827 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:27:40,831 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:27:40,832 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:27:40,835 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:27:46,687 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
+To install, run: pip install email-validator
+2023-09-14 11:31:20,194 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:31:20,195 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:31:20,195 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:31:20,199 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:31:20,199 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:31:20,203 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:31:20,203 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:31:20,207 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:31:20,207 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:31:20,210 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:33:03,651 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:33:03,653 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:33:03,653 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:33:03,657 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:33:03,657 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:33:03,661 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:33:03,662 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:33:03,666 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:33:03,667 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:33:03,671 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:34:12,030 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:34:12,031 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:34:12,031 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:34:12,034 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:34:12,034 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:34:12,037 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:34:12,038 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:34:12,041 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:34:12,042 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:34:12,045 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:35:47,736 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:35:47,737 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:35:47,737 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:47,741 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:35:47,741 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:47,745 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:35:47,746 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:47,751 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:35:47,752 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:47,755 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:35:53,305 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:35:53,306 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:35:53,306 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:53,309 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:35:53,309 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:53,313 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:35:53,313 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:53,317 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:35:53,317 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:35:53,320 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-14 11:35:56,796 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
+To install, run: pip install email-validator
+2023-09-14 11:56:38,359 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-14 11:56:38,360 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-14 11:56:38,361 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:56:38,364 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-14 11:56:38,364 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:56:38,369 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-14 11:56:38,369 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:56:38,372 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-14 11:56:38,372 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-14 11:56:38,383 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT

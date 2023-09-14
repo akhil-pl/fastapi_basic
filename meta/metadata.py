@@ -46,6 +46,10 @@ tags_metadata = [
         "name": "circuitbreaker",
         "description": "Implementing circuit breaker while calling external apis.",
     },
+    {
+        "name": "db metadata",
+        "description": "Metadata about the database schema.",
+    },
 ]
 
 
