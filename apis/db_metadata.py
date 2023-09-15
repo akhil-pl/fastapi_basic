@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from data.database import get_db_metadata
+from jobs.send_email import sent_email
 
 router = APIRouter()
 
@@ -45,3 +46,15 @@ async def metadata():
         Table[table.name] = table_info
 
     return Table
+
+
+
+
+# Path to email metadata
+@router.get("/email_metadata/{to_email}", tags=["db metadata"])
+async def email_metadata(to_email: str):
+    '''Not yet configured for gmail'''
+    subject = "Database Metadata"
+    content = str(get_db_metadata())
+    send = sent_email(to_email=to_email, subject=subject, content=content)
+    return send
