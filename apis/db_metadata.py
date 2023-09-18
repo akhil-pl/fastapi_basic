@@ -53,7 +53,7 @@ async def metadata():
 # Path to email metadata
 @router.get("/email_metadata/{to_email}", tags=["db metadata"])
 async def email_metadata(to_email: str):
-    '''Not yet configured for gmail'''
+    '''Will sent the Metadata to the given email'''
     subject = "Database Metadata"
     content = str(get_db_metadata())
     send = sent_email(to_email=to_email, subject=subject, content=content)
