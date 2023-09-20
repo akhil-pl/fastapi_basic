@@ -1,3 +1,4 @@
+from enum import Enum
 from fastapi import APIRouter
 from data.database import get_db_metadata
 from jobs.send_email import sent_email
@@ -58,3 +59,19 @@ async def email_metadata(to_email: str):
     content = str(get_db_metadata())
     send = sent_email(to_email=to_email, subject=subject, content=content)
     return send
+
+
+
+class SupportedDatabases(str, Enum):
+    mysql = "mysql"
+    sqlite = "sqlite"
+    postgres = "postgres"
+    redis = "redis"
+    mongodb = "mongodb"
+
+# Path to crawl metadata of any database
+@router.get("/any_db_metadata/{db}/{connection}", tags=["db metadata"])
+async def any_db_metadata(db: SupportedDatabases, connection: str):
+    '''To connect with a db and get metadata'''
+    result = "Not implemented yet"
+    return result

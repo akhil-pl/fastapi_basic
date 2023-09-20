@@ -20,3 +20,59 @@ To install, run: pip install email-validator
 2023-09-18 12:16:04,705 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
 2023-09-18 12:16:04,705 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
 2023-09-18 12:16:04,708 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-20 11:20:39,177 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-20 11:20:39,184 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-20 11:20:39,184 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 11:20:39,187 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-20 11:20:39,188 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 11:20:39,192 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-20 11:20:39,193 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 11:20:39,196 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-20 11:20:39,196 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 11:20:39,199 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-20 13:07:16,145 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-20 13:07:16,146 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-20 13:07:16,147 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:07:16,151 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-20 13:07:16,151 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:07:16,155 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-20 13:07:16,155 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:07:16,158 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-20 13:07:16,158 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:07:16,162 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-20 13:07:24,914 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
+To install, run: pip install email-validator
+2023-09-20 13:08:29,764 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-20 13:08:29,765 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-20 13:08:29,765 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:08:29,769 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-20 13:08:29,769 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:08:29,773 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-20 13:08:29,773 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:08:29,777 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-20 13:08:29,778 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:08:29,781 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-20 13:08:35,912 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
+To install, run: pip install email-validator
+2023-09-20 13:17:05,887 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-20 13:17:05,888 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-20 13:17:05,889 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:17:05,892 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-20 13:17:05,892 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:17:05,902 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-20 13:17:05,902 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:17:05,905 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-20 13:17:05,906 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:17:05,908 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-09-20 13:17:14,103 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
+To install, run: pip install email-validator
+2023-09-20 13:18:54,032 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-20 13:18:54,033 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-20 13:18:54,033 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:18:54,036 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-20 13:18:54,036 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:18:54,039 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-20 13:18:54,039 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:18:54,043 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-20 13:18:54,043 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-20 13:18:54,047 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
