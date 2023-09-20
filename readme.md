@@ -36,6 +36,7 @@ pip install requests
 pip install circuitbreaker
 pip install celery
 pip install yagmail
+pip install psycopg2-binary
 ```
 Or run the following code, it will recursively install all the requirements
 ``` bash

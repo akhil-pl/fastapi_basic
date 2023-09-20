@@ -1,4 +1,10 @@
 from enum import Enum
+from sqlalchemy import create_engine, MetaData
+from sqlalchemy.orm import sessionmaker
+# from redis import Redis
+from pydantic import BaseModel
+
+
 from fastapi import APIRouter
 from data.database import get_db_metadata
 from jobs.send_email import sent_email
@@ -69,9 +75,47 @@ class SupportedDatabases(str, Enum):
     redis = "redis"
     mongodb = "mongodb"
 
+class Connection(BaseModel):
+    string: str
+
+database_engines = {}
+Session = sessionmaker()
+
+metadata = MetaData()
+
 # Path to crawl metadata of any database
-@router.get("/any_db_metadata/{db}/{connection}", tags=["db metadata"])
-async def any_db_metadata(db: SupportedDatabases, connection: str):
-    '''To connect with a db and get metadata'''
-    result = "Not implemented yet"
-    return result
+@router.post("/any_db_metadata/{db}", tags=["db metadata"])
+async def any_db_metadata(db: SupportedDatabases, connection_string: Connection):
+    '''
+    To connect with a db and get metadata
+    "string": "mysql+mysqlconnector://rfamro:@mysql-rfam-public.ebi.ac.uk:4497/Rfam"
+    "string": "postgresql://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs"
+    '''
+    source_db_url = connection_string.string
+    try:
+        if db not in SupportedDatabases:
+            return {"error": "Unsupported database type"}
+        if db in ["mysql", "sqlite", "postgres"]:
+            engine = create_engine(source_db_url)
+            Session.configure(bind=engine)
+            session = Session()
+            metadata = MetaData()
+            metadata.reflect(bind=engine)
+            return str(metadata.tables.values())
+            # return [table.__dict__ for table in metadata.tables.values()]
+            # return [table.tometadata() for table in metadata.tables.values()]  # Convert to list of dictionaries
+        elif db == "redis":
+            # redis = Redis.from_url(source_db_url)
+            # redis_key = "your_redis_key"  # Replace with a suitable key
+            # redis.hmset(redis_key, data.dict())
+            return {"message": "Redis not implemented yet"}
+        elif db == "mongodb":
+            # mongo_client = MongoClient(source_db_url)
+            # mongo_db = mongo_client["your_mongodb_database"]  # Replace with your actual database name
+            # mongo_collection = mongo_db["your_mongodb_collection"]  # Replace with your actual collection name
+            # mongo_collection.insert_one(data.dict())
+            return {"message": "Mongodb not implemented yet"}
+    except Exception as e:
+        return {"error": str(e)}
+
+
