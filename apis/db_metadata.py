@@ -84,7 +84,7 @@ metadata = MetaData()
 
 # Path to crawl metadata of any database
 @router.post("/any_db_metadata/{db}", tags=["db metadata"])
-async def any_db_metadata(db: SupportedDatabases, connection_string: Connection):
+async def crawl_external_database(db: SupportedDatabases, connection_string: Connection):
     '''
     To connect with any database and get metadata, try these examples
     {"mysql": "rfamro:@mysql-rfam-public.ebi.ac.uk:4497/Rfam"},
