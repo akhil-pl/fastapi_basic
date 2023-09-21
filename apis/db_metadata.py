@@ -11,32 +11,25 @@ from jobs.send_email import sent_email
 
 router = APIRouter()
 
-# Path to get metadata
-@router.get("/metadata", tags=["db metadata"])
-async def metadata():
-    '''Path to get details about the database schema'''
+# Function to create dictionary object from crawled metadata
+def metadata_dict(data):
     Table = {}
-    for table in get_db_metadata():
+    for table in data:
         table_info = {}  # Create a dictionary for table-specific metadata
         table_info['columns'] = {}  # Create a dictionary for column information
-
         # Populate the table-specific metadata
         table_info['name'] = table.name
-
         for column in table.c:
             column_info = {
                 'type': str(column.type),
                 'nullable': column.nullable,
-                # 'default': column.default,
+                'default': column.default,
             }
-
             # Add column information to the table-specific metadata
             table_info['columns'][column.name] = column_info
-
         # Get primary keys for the table
         primary_keys = [key.name for key in table.primary_key]
         table_info['primary_keys'] = primary_keys
-
         # Get foreign keys for the table
         foreign_keys = []
         for column in table.columns:
@@ -48,19 +41,25 @@ async def metadata():
                         'foreign_column': fk.column.name
                     })
         table_info['foreign_keys'] = foreign_keys
-
         # Add table metadata to the 'Table' dictionary
         Table[table.name] = table_info
-
     return Table
 
+
+
+# Path to get metadata
+@router.get("/metadata", tags=["db metadata"])
+async def metadata():
+    '''Path to get details about the database schema of this application'''
+    return metadata_dict(get_db_metadata())
+    
 
 
 
 # Path to email metadata
 @router.get("/email_metadata/{to_email}", tags=["db metadata"])
 async def email_metadata(to_email: str):
-    '''Will sent the Metadata to the given email'''
+    '''Will sent the Metadata of this application database to the given email'''
     subject = "Database Metadata"
     content = str(get_db_metadata())
     send = sent_email(to_email=to_email, subject=subject, content=content)
@@ -71,7 +70,7 @@ async def email_metadata(to_email: str):
 class SupportedDatabases(str, Enum):
     mysql = "mysql"
     sqlite = "sqlite"
-    postgres = "postgres"
+    postgres = "postgresql"
     redis = "redis"
     mongodb = "mongodb"
 
@@ -87,23 +86,28 @@ metadata = MetaData()
 @router.post("/any_db_metadata/{db}", tags=["db metadata"])
 async def any_db_metadata(db: SupportedDatabases, connection_string: Connection):
     '''
-    To connect with a db and get metadata
-    "string": "mysql+mysqlconnector://rfamro:@mysql-rfam-public.ebi.ac.uk:4497/Rfam"
-    "string": "postgresql://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs"
+    To connect with any database and get metadata, try these examples
+    {"mysql": "rfamro:@mysql-rfam-public.ebi.ac.uk:4497/Rfam"},
+    {"sqlite" : "/give/path/to/local/sqlite.db"},
+    {"postgresql": "reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs"}
     '''
-    source_db_url = connection_string.string
+    source_db_url = ""
     try:
         if db not in SupportedDatabases:
             return {"error": "Unsupported database type"}
-        if db in ["mysql", "sqlite", "postgres"]:
+        if db in ["mysql", "sqlite", "postgresql"]:
+            if db == 'mysql':
+                source_db_url = "mysql+mysqlconnector://"+connection_string.string
+            elif db == 'sqlite':
+                source_db_url = "sqlite:///"+connection_string.string
+            else:
+                source_db_url = "postgresql://"+connection_string.string
+            
             engine = create_engine(source_db_url)
             Session.configure(bind=engine)
-            session = Session()
             metadata = MetaData()
             metadata.reflect(bind=engine)
-            return str(metadata.tables.values())
-            # return [table.__dict__ for table in metadata.tables.values()]
-            # return [table.tometadata() for table in metadata.tables.values()]  # Convert to list of dictionaries
+            return metadata_dict(metadata.tables.values())
         elif db == "redis":
             # redis = Redis.from_url(source_db_url)
             # redis_key = "your_redis_key"  # Replace with a suitable key
