@@ -663,3 +663,13 @@ WHERE users.email = %(email_1)s
 2023-09-25 15:02:42,786 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
 2023-09-25 15:02:43,736 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
 To install, run: pip install email-validator
+2023-09-25 16:37:53,835 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-09-25 16:37:53,836 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-09-25 16:37:53,837 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-25 16:37:53,840 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-09-25 16:37:53,840 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-25 16:37:53,843 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-09-25 16:37:53,843 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-25 16:37:53,847 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-09-25 16:37:53,847 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-09-25 16:37:53,850 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT

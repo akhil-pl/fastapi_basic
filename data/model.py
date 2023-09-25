@@ -14,6 +14,7 @@ class User(Base):
     dob = Column(DateTime)
     sex = Column(String(255))
     verified = Column(Boolean, default=False)
+    # otp_key = Column(String(255))  # Use caching for this
 
 class Person(Base):
     __abstract__ = True #Will not be added to table

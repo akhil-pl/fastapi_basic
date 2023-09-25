@@ -6,6 +6,9 @@ from sqlalchemy.orm import Session
 from data.model import User
 from data.database import get_db
 
+import pyotp
+from jobs.send_email import sent_email
+
 from typing import Annotated
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
@@ -85,4 +88,24 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
+
+
+
+# OTP functions
+def send_otp(email:str, subject:str, db:Session, validity_period:int | None = None):
+    # save it in cache instead of database
+    totp_secret = pyotp.random_base32()
+    user = db.query(User).filter(User.email==email).first()
+    user.otp_key = totp_secret
+    db.commit()
+    db.refresh(user)
+    if validity_period:
+        totp = pyotp.TOTP(totp_secret, interval=validity_period)
+    else:
+        validity_period = 600
+        totp = pyotp.TOTP(totp_secret, interval=validity_period)
+    otp = totp.now()
+    sent_email(to_email=email, subject=subject, content=otp)
+
+def verify_otp(email:str, )
 
