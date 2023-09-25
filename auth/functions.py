@@ -18,7 +18,7 @@ class Token(BaseModel):
 
 
 class TokenData(BaseModel):
-    username: str | None = None
+    email: str | None = None
 
 
 
@@ -28,8 +28,8 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 
-def get_user_by_username(db: Session, username: str):
-    return db.query(User).filter(User.username == username).first()
+def get_user_by_email(db: Session, email: str):
+    return db.query(User).filter(User.email == email).first()
 
 
 async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
@@ -40,13 +40,13 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
     )
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username: str = payload.get("sub")
-        if username is None:
+        email: str = payload.get("sub")
+        if email is None:
             raise credentials_exception
-        token_data = TokenData(username=username)
+        token_data = TokenData(email=email)
     except JWTError:
         raise credentials_exception
-    user = get_user_by_username(db, username)
+    user = get_user_by_email(db, email)
     if user is None:
         raise credentials_exception
     return user
@@ -68,8 +68,8 @@ def verify_password(plain_password: str, hashed_password: str):
     return pwd_context.verify(plain_password, hashed_password)
 
 
-def authenticate_user(username: str, password: str, db: Session):
-    user = db.query(User).filter(User.username==username).first()
+def authenticate_user(email: str, password: str, db: Session):
+    user = db.query(User).filter(User.email==email).first()
     if not user or not verify_password(password, user.password):
         return None
     return user

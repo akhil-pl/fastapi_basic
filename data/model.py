@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -7,8 +7,13 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, autoincrement=True, primary_key=True)
-    username = Column(String(255), unique=True, index=True)
+    email = Column(String(255), unique=True, index=True, nullable=False)
     password = Column(String(255))
+    first_name = Column(String(255), nullable=False)
+    last_name = Column(String(255))
+    dob = Column(DateTime)
+    sex = Column(String(255))
+    verified = Column(Boolean, default=False)
 
 class Person(Base):
     __abstract__ = True #Will not be added to table
