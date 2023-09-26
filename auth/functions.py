@@ -8,6 +8,7 @@ from data.database import get_db
 
 import pyotp
 from jobs.send_email import sent_email
+from data.data_access import set_otpkey_cache, get_otpkey_cache, invalidate_otpkey_cache
 
 from typing import Annotated
 from fastapi import Depends, HTTPException, status
@@ -92,20 +93,23 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
 
 
 # OTP functions
-def send_otp(email:str, subject:str, db:Session, validity_period:int | None = None):
-    # save it in cache instead of database
-    totp_secret = pyotp.random_base32()
-    user = db.query(User).filter(User.email==email).first()
-    user.otp_key = totp_secret
-    db.commit()
-    db.refresh(user)
-    if validity_period:
-        totp = pyotp.TOTP(totp_secret, interval=validity_period)
-    else:
-        validity_period = 600
-        totp = pyotp.TOTP(totp_secret, interval=validity_period)
-    otp = totp.now()
-    sent_email(to_email=email, subject=subject, content=otp)
+def send_otp(email:str, subject:str):
+    hotp_secret = pyotp.random_base32()
+    set_otpkey_cache(email=email, key=hotp_secret)
+    hotp = pyotp.HOTP(hotp_secret)
+    otp = hotp.at(0)
+    sent = sent_email(to_email=email, subject=subject, content=otp)
+    return sent
 
-def verify_otp(email:str, )
+def check_otp(email:str, user_otp:str):
+    hotp_secret = get_otpkey_cache(email=email)
+    if not hotp_secret:
+        raise HTTPException(status_code=400, detail="User not found or OTP expired.")
+    hotp = pyotp.HOTP(hotp_secret.decode('utf-8'))
+    if hotp.verify(user_otp,0):
+        invalidate_otpkey_cache(email=email)
+        return True
+    else:
+        raise HTTPException(status_code=400, detail="Invalid OTP")
+
 

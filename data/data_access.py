@@ -153,6 +153,25 @@ def invalidate_all_employees_cache():
     cache_key = "all_employees"
     redis_conn.delete(cache_key)
 
+
+
+
+# OTP caching
+def set_otpkey_cache(email:str, key:str, ttl:int=600):
+    cache_key = f"{email}:otpkey"
+    redis_conn.setex(cache_key, ttl, key)
+
+def get_otpkey_cache(email:str):
+    cache_key = f"{email}:otpkey"
+    return redis_conn.get(cache_key)
+
+def invalidate_otpkey_cache(email:str):
+    cache_key = f"{email}:otpkey"
+    redis_conn.delete(cache_key)
+
+
+
+
 # For clearing all cache
 def flush_all():
     try:

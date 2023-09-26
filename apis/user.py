@@ -5,7 +5,9 @@ from data.model import User
 from auth.functions import (hash_password, 
                             authenticate_user, 
                             create_access_token, 
-                            get_current_active_user, 
+                            get_current_active_user,
+                            send_otp,
+                            check_otp,
                             Token
                             )
 from auth.authentication import ACCESS_TOKEN_EXPIRE_MINUTES
@@ -66,10 +68,32 @@ def register_user(first_name: str = Query(..., description="User's First Name"),
     }
 
 
-# Path to generate otp
+# Path to generate otp for user verification
 @router.get('/generate_otp', tags=['users'])
-async def generate_otp(email:str):
-    return "Not implemented yet"
+async def generate_otp(email:str, db:Session=Depends(get_db)):
+    '''Path to generate otp for verifying user email'''
+    user = db.query(User).filter(User.email == email).first()
+    if user:
+        subject = "Email verification otp"
+        result = send_otp(email=email, subject=subject)
+        return result
+    else:
+        return {"message":"Invalid email"}
+
+
+# Path to verify otp for user verification
+@router.post('/verify_otp', tags=['users'])
+async def verify_otp(email:str, otp:str, db:Session=Depends(get_db)):
+    '''Path to validate OTP for user email verification'''
+    try:
+        result = check_otp(email=email, user_otp=otp)
+        verified_user = db.query(User).filter(User.email == email).first()
+        verified_user.verified = True
+        db.commit()
+        return {"message" : "User email verified suscessfully"}
+    except HTTPException as e:
+        return (f"OTP verification failed: {e.detail}")
+
 
 
 # Path to get current user
