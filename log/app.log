@@ -997,3 +997,204 @@ WHERE users.email = %(email_1)s
  LIMIT %(param_1)s
 2023-09-26 12:55:47,936 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 33.16s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
 2023-09-26 12:55:47,952 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-10-10 10:51:01,293 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 10:51:01,294 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`users`
+2023-10-10 10:51:01,294 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-10-10 10:51:01,296 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`candidate`
+2023-10-10 10:51:01,296 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-10-10 10:51:01,297 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`employees`
+2023-10-10 10:51:01,297 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-10-10 10:51:01,298 - INFO - sqlalchemy.engine.Engine - MainThread : DESCRIBE `employee_database`.`departments`
+2023-10-10 10:51:01,298 - INFO - sqlalchemy.engine.Engine - MainThread : [raw sql] {}
+2023-10-10 10:51:01,300 - INFO - sqlalchemy.engine.Engine - MainThread : 
+CREATE TABLE users (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	email VARCHAR(255) NOT NULL, 
+	password VARCHAR(255), 
+	first_name VARCHAR(255) NOT NULL, 
+	last_name VARCHAR(255), 
+	dob DATETIME, 
+	sex VARCHAR(255), 
+	verified BOOL, 
+	PRIMARY KEY (id)
+)
+
+
+2023-10-10 10:51:01,300 - INFO - sqlalchemy.engine.Engine - MainThread : [no key 0.00049s] {}
+2023-10-10 10:51:01,319 - INFO - sqlalchemy.engine.Engine - MainThread : CREATE UNIQUE INDEX ix_users_email ON users (email)
+2023-10-10 10:51:01,320 - INFO - sqlalchemy.engine.Engine - MainThread : [no key 0.00032s] {}
+2023-10-10 10:51:01,352 - INFO - sqlalchemy.engine.Engine - MainThread : 
+CREATE TABLE candidate (
+	skills VARCHAR(255), 
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	name VARCHAR(255), 
+	dob DATETIME, 
+	sex VARCHAR(255), 
+	PRIMARY KEY (id)
+)
+
+
+2023-10-10 10:51:01,353 - INFO - sqlalchemy.engine.Engine - MainThread : [no key 0.00045s] {}
+2023-10-10 10:51:01,373 - INFO - sqlalchemy.engine.Engine - MainThread : 
+CREATE TABLE departments (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	name VARCHAR(255), 
+	PRIMARY KEY (id), 
+	UNIQUE (name)
+)
+
+
+2023-10-10 10:51:01,373 - INFO - sqlalchemy.engine.Engine - MainThread : [no key 0.00037s] {}
+2023-10-10 10:51:01,397 - INFO - sqlalchemy.engine.Engine - MainThread : 
+CREATE TABLE employees (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	cid INTEGER, 
+	designation VARCHAR(255), 
+	did INTEGER, 
+	start DATETIME, 
+	end DATETIME, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cid) REFERENCES candidate (id), 
+	FOREIGN KEY(did) REFERENCES departments (id)
+)
+
+
+2023-10-10 10:51:01,397 - INFO - sqlalchemy.engine.Engine - MainThread : [no key 0.00043s] {}
+2023-10-10 10:51:01,426 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-10-10 10:51:24,946 - WARNING - fastapi - MainThread : email-validator not installed, email fields will be treated as str.
+To install, run: pip install email-validator
+2023-10-10 11:29:47,986 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : BEGIN (implicit)
+2023-10-10 11:29:47,990 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:29:48,018 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [generated in 0.02849s] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:29:48,028 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:30:11,188 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : BEGIN (implicit)
+2023-10-10 11:30:11,189 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:30:11,189 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [cached since 23.2s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:30:11,193 - DEBUG - passlib.handlers.bcrypt - AnyIO worker thread : detected 'bcrypt' backend, version '4.0.1'
+2023-10-10 11:30:11,193 - DEBUG - passlib.handlers.bcrypt - AnyIO worker thread : 'bcrypt' backend lacks $2$ support, enabling workaround
+2023-10-10 11:30:11,533 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : INSERT INTO users (email, password, first_name, last_name, dob, sex, verified) VALUES (%(email)s, %(password)s, %(first_name)s, %(last_name)s, %(dob)s, %(sex)s, %(verified)s)
+2023-10-10 11:30:11,534 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [generated in 0.00067s] {'email': 'akhilp@datapmi.com', 'password': '$2b$12$eWzc5nvTL5bQpgAJmN4M7Ol7Q0t1EEofX9LpN2pIGQnpSaAjCcXwy', 'first_name': 'Akhil', 'last_name': 'P L', 'dob': '29/09/1991', 'sex': 'Male', 'verified': 0}
+2023-10-10 11:30:11,534 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:32:01,896 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : BEGIN (implicit)
+2023-10-10 11:32:01,897 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:32:01,897 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [cached since 133.9s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:32:02,207 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : INSERT INTO users (email, password, first_name, last_name, dob, sex, verified) VALUES (%(email)s, %(password)s, %(first_name)s, %(last_name)s, %(dob)s, %(sex)s, %(verified)s)
+2023-10-10 11:32:02,207 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [cached since 110.7s ago] {'email': 'akhilp@datapmi.com', 'password': '$2b$12$uXIgZXCwBBuJiY38jmFVveQSXzxf8NZuyABG98tXqP3ZO3ksxTvcG', 'first_name': 'Akhil', 'last_name': 'P L', 'dob': '29-09-1991', 'sex': 'Male', 'verified': 0}
+2023-10-10 11:32:02,208 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:32:19,145 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : BEGIN (implicit)
+2023-10-10 11:32:19,146 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:32:19,146 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [cached since 151.2s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:32:19,459 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : INSERT INTO users (email, password, first_name, last_name, dob, sex, verified) VALUES (%(email)s, %(password)s, %(first_name)s, %(last_name)s, %(dob)s, %(sex)s, %(verified)s)
+2023-10-10 11:32:19,459 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [cached since 127.9s ago] {'email': 'akhilp@datapmi.com', 'password': '$2b$12$fOoC8yacMgJn/m8BRkkL2uFR85qQco9HZBKqWWgCYg3wmq6CcO9BG', 'first_name': 'Akhil', 'last_name': 'P L', 'dob': '1991-09-29', 'sex': 'Male', 'verified': 0}
+2023-10-10 11:32:19,460 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : COMMIT
+2023-10-10 11:32:19,500 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : BEGIN (implicit)
+2023-10-10 11:32:19,502 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : SELECT users.id, users.email, users.password, users.first_name, users.last_name, users.dob, users.sex, users.verified 
+FROM users 
+WHERE users.id = %(pk_1)s
+2023-10-10 11:32:19,502 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : [generated in 0.00075s] {'pk_1': 1}
+2023-10-10 11:32:19,505 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:33:24,903 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:33:24,904 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:33:24,905 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 216.9s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:33:24,907 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:55:25,313 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:55:25,314 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:55:25,314 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 1537s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:55:28,753 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:56:19,233 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:56:19,234 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:56:19,234 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 1591s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:56:19,238 - INFO - sqlalchemy.engine.Engine - MainThread : UPDATE users SET verified=%(verified)s WHERE users.id = %(users_id)s
+2023-10-10 11:56:19,238 - INFO - sqlalchemy.engine.Engine - MainThread : [generated in 0.00046s] {'verified': 1, 'users_id': 1}
+2023-10-10 11:56:19,239 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-10-10 11:57:18,826 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:18,827 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[0:10]
+2023-10-10 11:57:18,827 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:18,827 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:18,827 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[12:20]
+2023-10-10 11:57:18,827 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[21:41]
+2023-10-10 11:57:18,827 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:18,827 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[42:50]
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[51:62]
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[63:68]
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[70:79]
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[81:94]
+2023-10-10 11:57:18,828 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:18,829 - DEBUG - multipart.multipart - MainThread : Calling on_end with no data
+2023-10-10 11:57:18,831 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:57:18,831 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:57:18,832 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 1651s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:57:19,181 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:57:57,878 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:57,878 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[0:10]
+2023-10-10 11:57:57,878 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[11:19]
+2023-10-10 11:57:57,879 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:57,879 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:57,879 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[20:28]
+2023-10-10 11:57:57,879 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[29:49]
+2023-10-10 11:57:57,880 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:57,880 - DEBUG - multipart.multipart - MainThread : Calling on_field_start with no data
+2023-10-10 11:57:57,880 - DEBUG - multipart.multipart - MainThread : Calling on_field_name with data[50:58]
+2023-10-10 11:57:57,880 - DEBUG - multipart.multipart - MainThread : Calling on_field_data with data[59:70]
+2023-10-10 11:57:57,881 - DEBUG - multipart.multipart - MainThread : Calling on_field_end with no data
+2023-10-10 11:57:57,881 - DEBUG - multipart.multipart - MainThread : Calling on_end with no data
+2023-10-10 11:57:57,885 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:57:57,887 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:57:57,888 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 1690s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:57:58,201 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:58:12,035 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:58:12,036 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:58:12,036 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 1704s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:58:12,039 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
+2023-10-10 11:59:10,938 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:59:10,939 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT users.id AS users_id, users.email AS users_email, users.password AS users_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.dob AS users_dob, users.sex AS users_sex, users.verified AS users_verified 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2023-10-10 11:59:10,939 - INFO - sqlalchemy.engine.Engine - MainThread : [cached since 1763s ago] {'email_1': 'akhilp@datapmi.com', 'param_1': 1}
+2023-10-10 11:59:10,943 - INFO - sqlalchemy.engine.Engine - MainThread : INSERT INTO candidate (skills, name, dob, sex) VALUES (%(skills)s, %(name)s, %(dob)s, %(sex)s)
+2023-10-10 11:59:10,943 - INFO - sqlalchemy.engine.Engine - MainThread : [generated in 0.00070s] {'skills': 'Python, Javascript, SQL', 'name': 'Akhil P L', 'dob': '1991-09-29', 'sex': 'Male'}
+2023-10-10 11:59:10,945 - INFO - sqlalchemy.engine.Engine - MainThread : COMMIT
+2023-10-10 11:59:10,997 - INFO - sqlalchemy.engine.Engine - MainThread : BEGIN (implicit)
+2023-10-10 11:59:11,000 - INFO - sqlalchemy.engine.Engine - MainThread : SELECT candidate.skills, candidate.id, candidate.name, candidate.dob, candidate.sex 
+FROM candidate 
+WHERE candidate.id = %(pk_1)s
+2023-10-10 11:59:11,001 - INFO - sqlalchemy.engine.Engine - MainThread : [generated in 0.00074s] {'pk_1': 1}
+2023-10-10 11:59:11,004 - INFO - sqlalchemy.engine.Engine - AnyIO worker thread : ROLLBACK
